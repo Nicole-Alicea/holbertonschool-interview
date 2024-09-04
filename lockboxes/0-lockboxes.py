@@ -14,6 +14,7 @@ Write a method that determines if all the boxes can be opened.
     Return True if all boxes can be opened, else return False
 """
 
+
 def canUnlockAll(boxes):
     """
     Determines if all boxes can be opened.
@@ -27,14 +28,14 @@ def canUnlockAll(boxes):
         bool: True if all boxes can be opened, False otherwise.
     """
     n = len(boxes)  # Gives us the total number of boxes.
-    opened = [False] * n  # A boolean list that will track which boxes have been opened.
-    opened[0] = True  # The first box is unlocked, therefor the box at index 0 is equal to True.
+    opened = [False] * n  # Bool list that tracks which boxes have been opened
+    opened[0] = True  # True because this is the first box that is unlocked
     stack = [0]  # Initializes the stack with the first box.
 
     # To explore all of the keys found in the boxes.
     while stack:
-        current_box = stack.pop()  # This will assign the last opened box from the stack to current_box.
-        for key in boxes[current_box]:  # Will check all of the keys in the current box.
+        current_box = stack.pop()  # Assigns the last opened box from stack
+        for key in boxes[current_box]:  # Checks all of the keys in the box.
             # Check if the key corresponds to a valid unopened box.
             if 0 <= key < n and not opened[key]:
                 opened[key] = True  # Here we mark the box as opened.
