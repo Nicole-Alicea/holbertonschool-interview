@@ -1,0 +1,1 @@
+This repository contains tasks that will better prepare you for a technical interview.
