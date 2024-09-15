@@ -1,0 +1,1 @@
+This directory contains interview prep questions regarding heap insert in C.
