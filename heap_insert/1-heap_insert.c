@@ -2,12 +2,8 @@
 
 /**
  * height - Measures the height of a binary tree.
- * @tree: Pointer to the root node of the tree to measure the height.
  *
- * Description: This function recursively measures the height of a binary
- * tree. The height is defined as the number of edges on the longest path
- * from the node to a leaf. If the tree is NULL, it returns -1.
- *
+ * @tree: Pointer to the root node of the tree to measure height.
  * Return: The height of the tree. If the tree is NULL, return -1.
  */
 int height(const binary_tree_t *tree)
@@ -29,12 +25,9 @@ int height(const binary_tree_t *tree)
 
 /**
  * btree_is_perfect - Checks if a binary tree is perfect.
+ *
  * @tree: Pointer to the root node of the tree to check.
- *
- * Description: A perfect binary tree is a binary tree in which all internal
- * nodes have two children, and all leaves have the same depth or level.
- *
- * Return: 1 if the tree is perfect, otherwise 0.
+ * Return: 1 if tree is perfect, otherwise 0.
  */
 int btree_is_perfect(const binary_tree_t *tree)
 {
@@ -66,15 +59,11 @@ int btree_is_perfect(const binary_tree_t *tree)
 }
 
 /**
- * swap - Swaps two nodes in a binary heap when the child node has a greater value than the parent node.
+ * swap - Swaps nodes when the child is greater than the parent.
+ *
  * @arg_node: Pointer to the parent node.
  * @arg_child: Pointer to the child node.
- *
- * Description: This function swaps the positions of a parent node and its child
- * in a Max Binary Heap if the child has a greater value than the parent. After
- * the swap, the heap structure is maintained.
- *
- * Return: Nothing.
+ * Return: no return
  */
 void swap(heap_t **arg_node, heap_t **arg_child)
 {
@@ -121,17 +110,10 @@ void swap(heap_t **arg_node, heap_t **arg_child)
 }
 
 /**
- * heap_insert - Inserts a value into a Max Binary Heap.
- * @root: Double pointer to the root node of the heap.
- * @value: Value to be inserted into the heap.
- *
- * Description: This function inserts a value into a Max Binary Heap. If the
- * tree is perfect, it inserts the new value in the left subtree, otherwise
- * it continues to insert in the right subtree. It ensures that the Max Heap
- * property (parent node is greater than or equal to child nodes) is maintained
- * by swapping nodes if necessary.
- *
- * Return: A pointer to the newly inserted node, or NULL on failure.
+ * heap_insert - function that inserts a value in Max Binary Heap
+ * @value: value to be inserted
+ * @root: tree root
+ * Return: pointer to the created node, or NULL on failure.
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
