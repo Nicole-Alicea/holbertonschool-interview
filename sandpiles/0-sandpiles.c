@@ -40,7 +40,8 @@ void p(int grid[3][3])
  *              intermediate state after toppling begins.
  *
  *              The function follows the rules of the "sandpile" mathematical
- *              model, where each grid element represents a pile of sand grains.
+ *              model, where each grid element represents a pile of sand
+ *              grains.
  *              When any pile contains 4 or more grains, it topples by
  *              distributing grains to its neighbors.
  *
