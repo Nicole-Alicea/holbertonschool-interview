@@ -77,3 +77,4 @@ if __name__ == "__main__":
 
     # Print final statistics after all input has been processed
     print_stats()
+
