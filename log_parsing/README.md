@@ -1,0 +1,1 @@
+This directory contains a technical interview practice question regarding log parsing.
