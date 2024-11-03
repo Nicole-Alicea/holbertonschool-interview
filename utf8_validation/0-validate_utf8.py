@@ -42,6 +42,10 @@ def validUTF8(data):
     """
     successive_10 = 0  # Counter for expected continuation bytes
     for b in data:
+        # Check if byte is outside valid range
+        if b < 0 or b > 255:
+            return False
+
         # Convert integer to 8-bit binary, padded with zeros if necessary
         b = bin(b).replace('0b', '').rjust(8, '0')
 
