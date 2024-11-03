@@ -45,19 +45,29 @@ def validUTF8(data):
         # Check if byte is outside valid range
         if b < 0 or b > 255:
             return False
+        
+        # Convert integer to binary and keep the last 8 bits only
+        byte = bin(b & 0xFF).replace('0b', '').rjust(8, '0')
 
-        # Convert integer to 8-bit binary, padded with zeros if necessary
-        b = bin(b).replace('0b', '').rjust(8, '0')
-
-        # Check if we're in the middle of validating continuation bytes
-        if successive_10 != 0:
+        # If we're in the middle of checking continuation bytes
+        if successive_10 > 0:
+            # Each continuation byte should start with '10'
+            if not byte.startswith('10'):
+                return False
             successive_10 -= 1
-            # Continuation bytes must start with "10"
-            if not b.startswith('10'):
+        else:
+            # Determine the number of bytes for a new character
+            if byte[0] == '0':  # 1-byte character
+                continue
+            elif byte.startswith('110'):  # 2-byte character
+                successive_10 = 1
+            elif byte.startswith('1110'):  # 3-byte character
+                successive_10 = 2
+            elif byte.startswith('11110'):  # 4-byte character
+                successive_10 = 3
+            else:
+                # Invalid starting byte for UTF-8
                 return False
-        elif b[0] == '1':  # Start of a multi-byte character
-            successive_10 = len(b.split('0')[0]) - 1
-            # A maximum of 4-byte characters are allowed in UTF-8
-            if successive_10 < 1 or successive_10 > 3:
-                return False
+
+    # If successive_10 is not zero, it means there are missing continuation bytes
     return successive_10 == 0
