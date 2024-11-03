@@ -4,12 +4,13 @@ UTF-8 Validation Module
 
 This module provides a single function `validUTF8`, which checks whether a
 given list of integers represents a valid sequence of UTF-8 encoded
-characters. 
+characters.
 
 Each integer in the list represents a byte in the data stream, and only the 8
 least significant bits of each integer are considered in the validation
 process.
 """
+
 
 def validUTF8(data):
     # Number of bytes in the current UTF-8 character
