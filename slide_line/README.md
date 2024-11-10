@@ -1,0 +1,1 @@
+This directory contains an interview prep problem in which the goal is to reproduce the 2048 game mechanics on a single horizontal line. It has been resolved using C.
