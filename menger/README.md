@@ -1,0 +1,1 @@
+This directory contains an interview prep question in which the goal is to write a function in C that will draw a 2D Menger Sponge.
