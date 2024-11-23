@@ -1,0 +1,1 @@
+This directory contains an interview prep question regarding the N queens puzzle. This puzzle is the challenge of placing N non-attacking queens on an NxN chessboard. The goal of this project is to write a program that solves the N queens problem while only being able to import the sys module.
