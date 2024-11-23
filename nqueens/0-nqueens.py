@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def is_safe(board, row, col, n):
     """Checks if a queen can be placed on board[row][col]."""
     # Check for queens in the same column
