@@ -2,8 +2,8 @@
 """
 N-Queens Solver
 
-This script solves the N-Queens problem, which is the challenge of placing N queens 
-on an N×N chessboard such that no two queens attack each other.
+This script solves the N-Queens problem, which is the challenge of placing N
+queens on an N×N chessboard such that no two queens attack each other.
 
 Usage:
     - N must be an integer greater than or equal to 4.
@@ -12,8 +12,10 @@ Usage:
 
 Functions:
     print_solution(solution): Prints a solution in the required format.
-    is_safe(solution, row, col): Checks if placing a queen at (row, col) is safe.
-    solve_nqueens(N, row, solution, solutions): Uses backtracking to solve the problem.
+    is_safe(solution, row, col): Checks if placing a queen at (row, col)
+    is safe.
+    solve_nqueens(N, row, solution, solutions): Uses backtracking to solve
+    the problem.
     nqueens(): Main function to handle input and solve the problem.
 """
 
@@ -25,9 +27,9 @@ def print_solution(solution):
     Print the solution in the required format.
 
     Args:
-        solution (list): A list where the index represents the row and the value 
-                         represents the column of the queen in that row.
-    
+        solution (list): A list where the index represents the row and the
+                         value represents the column of the queen in that row.
+
     Example:
         If solution = [1, 3, 0, 2], it prints:
         [[0, 1], [1, 3], [2, 0], [3, 2]]
@@ -40,8 +42,9 @@ def is_safe(solution, row, col):
     Check if placing a queen at (row, col) is safe.
 
     Args:
-        solution (list): Current solution array where index represents the row, 
-                         and value represents the column of the queen in that row.
+        solution (list): Current solution array where index represents the row
+                         and value represents the column of the queen in that
+                         row.
         row (int): The row to place the queen.
         col (int): The column to place the queen.
 
