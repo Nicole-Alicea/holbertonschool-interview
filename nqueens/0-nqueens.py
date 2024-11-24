@@ -91,7 +91,7 @@ def nqueens():
     - Validates the input.
     - Initializes the solution array.
     - Calls the backtracking solver.
-    
+
     Exits with:
         1: If the number of arguments is incorrect.
         1: If N is not an integer.
