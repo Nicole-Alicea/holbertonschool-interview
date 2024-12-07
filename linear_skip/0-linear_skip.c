@@ -12,17 +12,19 @@
 
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-    skiplist_t *now;   /* Pointer to track the current node during skip traversal. */
-    skiplist_t *prev;  /* Pointer to track the previous node during skip traversal. */
-    char *msg1 = "Value checked at index";    /* Message template for checking a node. */
-    char *msg2 = "Value found between indexes"; /* Message template for indicating search range. */
+    skiplist_t *now;   /* Tracks the current node during skip traversal. */
+    skiplist_t *prev;  /* Tracks the previous node during skip traversal. */
+    char *msg1 = "Value checked at index";
+    char *msg2 = "Value found between indexes";
 
     /* If the list is empty, return NULL. */
     if (!list)
         return (NULL);
 
-    prev = list;         /* Start the search from the head of the list. */
-    now = list->express; /* Initialize `now` to the first express (skip) pointer. */
+    /* Start the search from the head of the list. */
+    prev = list;
+    /* Initialize `now` to the first express (skip) pointer. */
+    now = list->express;
 
     /* Traverse the skip list using express pointers. */
     while (now)
@@ -30,14 +32,14 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
         /* Print the current node being checked with the skip pointer. */
         printf("%s [%lu] = [%d]\n", msg1, now->index, now->n);
 
-        /* If the current node's value is greater than or equal to the target value, stop skipping. */
+        /* Stop skipping if current node's value >= to the target value */
         if (now->n >= value)
             break;
 
         /* Move the `prev` pointer to the current `now` node. */
         prev = now;
 
-        /* If there are no more express pointers, move to the end of the list. */
+        /* If there are no more express pointers, move to end of the list. */
         if (!now->express)
         {
             while (now->next) /* Traverse to the end of the list. */
@@ -58,7 +60,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
         /* Print the current node being checked during the linear search. */
         printf("%s [%lu] = [%d]\n", msg1, prev->index, prev->n);
 
-        /* If the value at the current node matches the target value, return the node. */
+        /* If the value at current node = target value, return the node. */
         if (prev->n == value)
             return (prev);
 
