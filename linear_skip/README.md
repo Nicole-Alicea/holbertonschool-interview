@@ -1,0 +1,1 @@
+This directory contains an interview prep question in which the goal is to write a function that searches for a value in a sorted skip list of integers.
