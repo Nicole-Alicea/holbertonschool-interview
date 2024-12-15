@@ -1,0 +1,1 @@
+This directory contains an interview prep question in which the goal is to write a script that prints all characters of a Star Wars movie. The language used is Javascript.
