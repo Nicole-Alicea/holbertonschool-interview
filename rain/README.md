@@ -1,0 +1,1 @@
+This directory contains an interview prep question in which the goal is to calculate how many square units of water will be retained after it rains. This is accomplished using a list of non-negative integers representing the heights of walls with unit width 1, as if viewing the cross-section of a relief map.
