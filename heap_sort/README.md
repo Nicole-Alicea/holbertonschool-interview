@@ -1,0 +1,1 @@
+This directory contains an interview prep question in which the goal is to write a function that sorts an array of integers in ascending order using the sift-down heap sort algorithm.
