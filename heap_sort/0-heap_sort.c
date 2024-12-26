@@ -2,7 +2,7 @@
 
 /**
  * sift_down - Restores the max heap property by sifting down an element
- * 
+ *
  * @array: The array to be heapified
  * @size: Total size of the array (used for printing)
  * @root: The index of the root node of the subtree to sift down
