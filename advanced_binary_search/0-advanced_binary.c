@@ -45,29 +45,13 @@ int recursive_binary(int *array, size_t start, size_t end, int value)
 
     size_t mid = start + (end - start) / 2; /* Calculate middle index */
 
-    /* Check if the middle element is the target value */
-    if (array[mid] == value)
-    {
-        /* Check if it is the first occurrence */
-        if (mid == start || array[mid - 1] != value)
-        {
-            return mid;
-        }
-        /* Otherwise, continue searching in the left subarray */
-        return recursive_binary(array, start, mid - 1, value);
-    }
+    if (array[mid] == value && (mid == start || array[mid - 1] != value))
+		return ((int)mid);
 
-    else if (array[mid] > value)
-    {
-        /* Search in the left subarray */
-        return recursive_binary(array, start, mid - 1, value);
-    }
+	if (array[mid] >= value)
+		return recursive_binary(array, start, mid, value);
 
-    else
-    {
-        /* Search in the right subarray */
-        return recursive_binary(array, mid + 1, end, value);
-    }
+	return recursive_binary(array, mid + 1, end, value);
 }
 
 /**
