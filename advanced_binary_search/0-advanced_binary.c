@@ -12,14 +12,14 @@
  */
 void print_array(int *array, size_t start, size_t end)
 {
-    printf("Searching in array: ");
-    for (size_t i = start; i <= end; i++)
+	printf("Searching in array: ");
+	for (size_t i = start; i <= end; i++)
     {
-        printf("%d", array[i]);
-        if (i < end)
-            printf(", ");
-    }
-    printf("\n");
+		printf("%d", array[i]);
+		if (i < end)
+			printf(", ");
+	}
+	printf("\n");
 }
 
 /**
@@ -38,15 +38,17 @@ void print_array(int *array, size_t start, size_t end)
  */
 int recursive_binary(int *array, size_t start, size_t end, int value)
 {
-    if (start > end)
-        return -1; /* Base case: value not found */
+	size_t mid;
 
-    print_array(array, start, end); /* Print the current subarray */
+	if (start > end)
+		return -1;
 
-    size_t mid = start + (end - start) / 2; /* Calculate middle index */
+	print_array(array, start, end);
 
-    if (array[mid] == value && (mid == start || array[mid - 1] != value))
-		return ((int)mid);
+	mid = start + (end - start) / 2;
+
+	if (array[mid] == value && (mid == start || array[mid - 1] != value))
+		return (int)mid;
 
 	if (array[mid] >= value)
 		return recursive_binary(array, start, mid, value);
@@ -69,9 +71,8 @@ int recursive_binary(int *array, size_t start, size_t end, int value)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-    if (!array || size == 0)
-        return -1; /* Handle edge cases where the array is NULL or empty */
+	if (!array || size == 0)
+		return -1;
 
-    /* Call the recursive binary search function */
-    return recursive_binary(array, 0, size - 1, value);
+	return recursive_binary(array, 0, size - 1, value);
 }
