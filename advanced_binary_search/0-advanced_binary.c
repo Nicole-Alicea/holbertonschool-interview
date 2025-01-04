@@ -41,23 +41,23 @@ int recursive_binary(int *array, size_t start, size_t end, int value)
 	size_t mid;
 
 	if (start > end)
-		return -1;
+		return (-1);
 
 	print_array(array, start, end);
 
 	mid = start + (end - start) / 2;
 
 	if (array[mid] == value && (mid == start || array[mid - 1] != value))
-		return (int)mid;
+		return ((int)mid);
 
 	if (array[mid] >= value)
-		return recursive_binary(array, start, mid, value);
+		return (recursive_binary(array, start, mid, value));
 
-	return recursive_binary(array, mid + 1, end, value);
+	return (recursive_binary(array, mid + 1, end, value));
 }
 
 /**
- * advanced_binary - Searches for the first occurrence of a value in a sorted array.
+ * advanced_binary - Searches for the 1st occurrence of value in sorted array.
  * @array: Pointer to the first element of the array to search in.
  * @size: Number of elements in the array.
  * @value: The value to search for.
@@ -72,7 +72,7 @@ int recursive_binary(int *array, size_t start, size_t end, int value)
 int advanced_binary(int *array, size_t size, int value)
 {
 	if (!array || size == 0)
-		return -1;
+		return (-1);
 
-	return recursive_binary(array, 0, size - 1, value);
+	return (recursive_binary(array, 0, size - 1, value));
 }
