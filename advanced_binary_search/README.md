@@ -1,0 +1,1 @@
+This directory contains an interview prep question that focuses on solving the problem in which a basic binary search does not necessarily return the index of the first value in the array (if this value appears more than once in the array). The goal is to write a function in C that searches for a value in a sorted array of integers.
