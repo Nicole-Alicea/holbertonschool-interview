@@ -36,7 +36,8 @@ def count_words(subreddit, word_list, after=None, word_count=None):
 
     try:
         # Make the API request to fetch hot posts
-        response = requests.get(url,headers=headers,params=params,timeout=10)
+        response = requests.get(url, headers=headers, params=params,
+                                timeout=10)
         if response.status_code != 200:
             return  # Exit if the request fails
         data = response.json()
