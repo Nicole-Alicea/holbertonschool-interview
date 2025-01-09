@@ -2,7 +2,7 @@
 """
 Module to count keywords in Reddit post titles using the Reddit API.
 
-This script allows users to query a specific subreddit, analyze the titles of 
+This script allows users to query a specific subreddit, analyze the titles of
 hot posts, and count occurrences of specified keywords. The keywords are
 case-insensitive, and the results are displayed in descending order of
 frequency.
@@ -36,7 +36,7 @@ def count_words(subreddit, word_list, after=None, word_count=None):
 
     try:
         # Make the API request to fetch hot posts
-        response = requests.get(url, headers=headers, params=params, timeout=10)
+        response = requests.get(url,headers=headers,params=params,timeout=10)
         if response.status_code != 200:
             return  # Exit if the request fails
         data = response.json()
