@@ -88,17 +88,18 @@ int heap_extract(heap_t **root)
 	if (!last)
 		return (0);
 
-	if (last == heap) // If there's only one node
+	/* If there's only one node */
+	if (last == heap)
 	{
 		free(heap);
 		*root = NULL;
 		return (value);
 	}
 
-    // Replace the root with the last node
+    /* Replace the root with the last node */
 	heap->n = last->n;
 
-    // Remove the last node
+    /* Remove the last node */
 	if (last->parent->left == last)
 		last->parent->left = NULL;
 	else
@@ -106,7 +107,7 @@ int heap_extract(heap_t **root)
 
 	free(last);
 
-    // Rebuild the heap
+    /* Rebuild the heap */
 	sift_down(heap);
 
 	return (value);
