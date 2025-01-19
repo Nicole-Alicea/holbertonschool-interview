@@ -8,6 +8,7 @@
 void swap(heap_t *a, heap_t *b)
 {
 	int temp = a->n;
+
 	a->n = b->n;
 
 	b->n = temp;
@@ -25,6 +26,7 @@ heap_t *get_last_node(heap_t *root)
 		return (NULL);
 
 	heap_t **queue = malloc(1024 * sizeof(heap_t *));
+
 	if (!queue)
 		return (NULL);
 
@@ -57,6 +59,7 @@ void sift_down(heap_t *node)
 	while (node)
 	{
 		heap_t *largest = node;
+
 		if (node->left && node->left->n > largest->n)
 			largest = node->left;
 		if (node->right && node->right->n > largest->n)
@@ -85,6 +88,7 @@ int heap_extract(heap_t **root)
 	int value = heap->n;
 
 	heap_t *last = get_last_node(heap);
+
 	if (!last)
 		return (0);
 
