@@ -53,7 +53,6 @@ int main(int argc, char **argv)
 {
 	int len1, len2, carry, a, b, i, j;
 	int *result;
-
 	is_error(argc, argv); /* Validate input arguments */
 
 	len1 = strlen(argv[1]); /* Calculate the lengths of the input strings */
