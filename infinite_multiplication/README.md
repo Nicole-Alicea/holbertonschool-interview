@@ -1,0 +1,1 @@
+This directory contains an interview prep problem in which the goal is to write a program that multiplies two positive numbers using C.
