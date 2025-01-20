@@ -22,7 +22,6 @@ int is_error(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-
 	for (i = 1; i < argc; i++)  /* Validate each argument */
 	{
 		for (j = 0; argv[i][j]; j++)
@@ -57,8 +56,7 @@ int main(int argc, char **argv)
 
 	is_error(argc, argv); /* Validate input arguments */
 
-	/* Calculate the lengths of the input strings */
-	len1 = strlen(argv[1]);
+	len1 = strlen(argv[1]); /* Calculate the lengths of the input strings */
 	len2 = strlen(argv[2]);
 
 	if (argv[1][0] == '0' || argv[2][0] == '0')
