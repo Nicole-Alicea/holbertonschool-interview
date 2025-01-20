@@ -34,7 +34,6 @@ int is_error(int argc, char **argv)
 			}
 		}
 	}
-
 	return (0);  /* Return success if all checks pass */
 }
 
@@ -62,7 +61,7 @@ int main(int argc, char **argv)
 	len1 = strlen(argv[1]);
 	len2 = strlen(argv[2]);
 
-	if (argv[1][0] == '0' || argv[2][0] == '0') /* Handle edge case where argument is "0" */
+	if (argv[1][0] == '0' || argv[2][0] == '0')
 	{
 		printf("0\n");
 		return (EXIT_SUCCESS);
@@ -93,8 +92,6 @@ int main(int argc, char **argv)
 	for (; a < len1 + len2; a++) /* Print the final result */
 		printf("%d", result[a]);
 	printf("\n");
-
 	free(result); /* Free allocated memory */
-
 	return (EXIT_SUCCESS);
 }
