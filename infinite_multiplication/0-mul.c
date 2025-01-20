@@ -45,9 +45,7 @@ int is_error(int argc, char **argv)
  *
  * Description:
  * This program multiplies two large positive integers provided as command-line
- * arguments. The multiplication is implemented manually using arrays to store
- * intermediate results, making it capable of handling integers larger than the
- * range supported by primitive types (e.g., `int` or `long`).
+ * arguments.
  *
  * Return:
  * - EXIT_SUCCESS (0) on successful completion.
@@ -64,7 +62,7 @@ int main(int argc, char **argv)
 	len1 = strlen(argv[1]);
 	len2 = strlen(argv[2]);
 
-	if (argv[1][0] == '0' || argv[2][0] == '0') /* Handle edge case where any argument is "0" */
+	if (argv[1][0] == '0' || argv[2][0] == '0') /* Handle edge case where argument is "0" */
 	{
 		printf("0\n");
 		return (EXIT_SUCCESS);
