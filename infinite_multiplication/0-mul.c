@@ -53,6 +53,7 @@ int main(int argc, char **argv)
 {
 	int len1, len2, carry, a, b, i, j;
 	int *result;
+
 	is_error(argc, argv); /* Validate input arguments */
 
 	len1 = strlen(argv[1]); /* Calculate the lengths of the input strings */
@@ -63,7 +64,6 @@ int main(int argc, char **argv)
 		printf("0\n");
 		return (EXIT_SUCCESS);
 	}
-
 	/* Allocate memory for the result array (initialized to 0) */
 	result = calloc(len1 + len2, sizeof(*result));
 	if (!result)  /* Check for memory allocation failure */
