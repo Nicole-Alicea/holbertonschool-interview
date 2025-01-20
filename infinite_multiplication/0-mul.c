@@ -58,15 +58,13 @@ int main(int argc, char **argv)
 	int len1, len2, carry, a, b, i, j;
 	int *result;
 
-	/* Validate input arguments */
-	is_error(argc, argv);
+	is_error(argc, argv); /* Validate input arguments */
 
 	/* Calculate the lengths of the input strings */
 	len1 = strlen(argv[1]);
 	len2 = strlen(argv[2]);
 
-	/* Handle edge case where any argument is "0" */
-	if (argv[1][0] == '0' || argv[2][0] == '0')
+	if (argv[1][0] == '0' || argv[2][0] == '0') /* Handle edge case where any argument is "0" */
 	{
 		printf("0\n");
 		return (EXIT_SUCCESS);
@@ -77,12 +75,11 @@ int main(int argc, char **argv)
 	if (!result)  /* Check for memory allocation failure */
 		return (EXIT_FAILURE);
 
-	/* Perform multiplication digit-by-digit */
-	for (i = len1 - 1; i >= 0; i--)
+	for (i = len1 - 1; i >= 0; i--) /* Perform multiplication digit-by-digit */
 	{
-    	carry = 0;
-    	a = argv[1][i] - '0';  /* Convert char to int */
-    	for (j = len2 - 1; j >= 0; j--)
+		carry = 0;
+		a = argv[1][i] - '0';  /* Convert char to int */
+		for (j = len2 - 1; j >= 0; j--)
 		{
 			b = argv[2][j] - '0';  /* Convert char to int */
 			carry += result[i + j + 1] + (a * b);  /* Add product and carry */
@@ -93,16 +90,13 @@ int main(int argc, char **argv)
 			result[i + j + 1] += carry;  /* Add remaining carry */
 	}
 
-	/* Skip leading zeros in the result array */
-	a = result[0] == 0 ? 1 : 0;
+	a = result[0] == 0 ? 1 : 0; /* Skip leading zeros in the result array */
 
-	/* Print the final result */
-	for (; a < len1 + len2; a++)
+	for (; a < len1 + len2; a++) /* Print the final result */
 		printf("%d", result[a]);
 	printf("\n");
 
-	/* Free allocated memory */
-	free(result);
+	free(result); /* Free allocated memory */
 
 	return (EXIT_SUCCESS);
 }
