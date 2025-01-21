@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-''' 
+'''
 Module for rotating a 2D matrix.
 
-This module provides a function to rotate a given 2D matrix 90 degrees clockwise 
+This module provides a function to rotate a given 2D matrix 90 degrees clockwise
 in-place. The matrix must be square (n x n dimensions).
 '''
 
@@ -20,19 +20,28 @@ def rotate_2d_matrix(matrix):
     if not matrix or len(matrix) == 0:
         return  # Return early if the matrix is empty or invalid.
 
-    # Temporary matrix to store a copy of the input matrix.
-    matrix0 = [[0, 0, 0],
-               [0, 0, 0],
-               [0, 0, 0]]
-    
-    # Copy elements of the original matrix into the temporary matrix.
-    for i in range(len(matrix[0])):
-        for j in range(len(matrix[0])):
-            matrix0[i][j] = matrix[i][j]
+    # Get the size of the matrix.
+    n = len(matrix)
 
-    # Rotate the matrix by rearranging elements.
-    for i in range(len(matrix[0])):
-        p = len(matrix[0]) - 1
-        for j in range(len(matrix[0])):
-            matrix[i][j] = matrix0[p][i]
-            p -= 1
+    # Rotate the matrix in-place using layer-by-layer rotation.
+    for layer in range(n // 2):
+        first = layer
+        last = n - 1 - layer
+        for i in range(first, last):
+            # Offset from the layer's first element.
+            offset = i - first
+
+            # Save the top element.
+            top = matrix[first][i]
+
+            # Move left to top.
+            matrix[first][i] = matrix[last - offset][first]
+
+            # Move bottom to left.
+            matrix[last - offset][first] = matrix[last][last - offset]
+
+            # Move right to bottom.
+            matrix[last][last - offset] = matrix[i][last]
+
+            # Assign top to right.
+            matrix[i][last] = top
