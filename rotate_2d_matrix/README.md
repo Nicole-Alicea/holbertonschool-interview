@@ -1,0 +1,1 @@
+This directory contains an interview prep problem in which the goal is to rotate a given n x n 2D matrix 90 degrees clockwise. The problem will be solved using Python.
