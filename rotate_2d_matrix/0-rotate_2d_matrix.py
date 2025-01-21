@@ -2,16 +2,17 @@
 '''
 Module for rotating a 2D matrix.
 
-This module provides a function to rotate a given 2D matrix 90 degrees clockwise
-in-place. The matrix must be square (n x n dimensions).
+This module provides a function to rotate a given 2D matrix 90 degrees
+clockwise in-place. The matrix must be square (n x n dimensions).
 '''
 
+
 def rotate_2d_matrix(matrix):
-    ''' 
+    '''
     Rotates a 2D matrix 90 degrees clockwise.
 
     Args:
-        matrix (list of lists): A square 2D matrix (n x n dimensions) where 
+        matrix (list of lists): A square 2D matrix (n x n dimensions) where
         each inner list represents a row.
 
     Returns:
